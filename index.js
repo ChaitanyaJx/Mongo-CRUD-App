@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const productRoute = require('./routes/product.route');
 
 const app = express();
@@ -12,7 +13,8 @@ app.use('/product', productRoute);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 })
-const MongoDBURL = process.env.MONGODB_URI
+const MongoDBURL = process.env.MONGODB_URI;
+
 mongoose
   .connect(MongoDBURL, {
     useNewUrlParser: true,
