@@ -12,8 +12,9 @@ app.use('/product', productRoute);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 })
+const MongoDBURL = process.env.MONGODB_URI
 mongoose
-  .connect('mongodb+srv://chaitanyajambhulkar768:yUvxl8sRfB3cSnc3@nodeapi.2kvd4.mongodb.net/?retryWrites=true&w=majority&appName=NodeAPI', {
+  .connect(MongoDBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
