@@ -11,10 +11,13 @@ app.set('views', path.join(__dirname, 'views'));
 //Routes
 app.use('/product', productRoute);
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', { name: 'Express' });
-});
+// app.get('/', (req, res) => {
+//   res.render('index.ejs', { name: 'Express' });
+// });
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+})
 mongoose
   .connect('mongodb+srv://chaitanyajambhulkar768:yUvxl8sRfB3cSnc3@nodeapi.2kvd4.mongodb.net/?retryWrites=true&w=majority&appName=NodeAPI', {
     useNewUrlParser: true,
