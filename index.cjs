@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/product', productRoute);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World!!');
 })
 const MongoDBURL = process.env.MONGODB_URI;
 
