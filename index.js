@@ -13,7 +13,7 @@ app.use('/product', productRoute);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 })
-const MongoDBURL = process.env.MONGODB_URI;
+const MongoDBURL = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mongo-crud-app';
 
 mongoose
   .connect(MongoDBURL, {
