@@ -7,11 +7,19 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.set('view engine', 'ejs');
 //Routes
 app.use('/product', productRoute);
 
 app.get('/', (req, res) => {
   res.send('Hello World!!');
+})
+
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
+    title: 'MongoDB CRUD App',
+  })
 })
 const MongoDBURL = process.env.MONGODB_URI;
 
